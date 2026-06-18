@@ -45,7 +45,11 @@ export default function SettingsPage() {
           icon: <Accessibility size={18} color="var(--primary)" />,
           label: t('highContrast'),
           right: (
-            <div onClick={() => setAccessibility({ ...accessibility, highContrast: !accessibility.highContrast })}
+            <div onClick={() => {
+              const newState = !accessibility.highContrast;
+              setAccessibility({ ...accessibility, highContrast: newState });
+              showToast(newState ? 'High Contrast enabled' : 'High Contrast disabled');
+            }}
               style={{ width: '44px', height: '24px', borderRadius: '12px', background: accessibility.highContrast ? 'var(--primary)' : 'var(--border-color)', position: 'relative', cursor: 'pointer', transition: 'background 0.2s' }}>
               <div style={{ position: 'absolute', top: '2px', left: accessibility.highContrast ? '22px' : '2px', width: '20px', height: '20px', borderRadius: '50%', background: 'white', transition: 'left 0.2s' }} />
             </div>
@@ -55,7 +59,11 @@ export default function SettingsPage() {
           icon: <Moon size={18} color="var(--primary)" />,
           label: t('largeText'),
           right: (
-            <div onClick={() => setAccessibility({ ...accessibility, largeText: !accessibility.largeText })}
+            <div onClick={() => {
+              const newState = !accessibility.largeText;
+              setAccessibility({ ...accessibility, largeText: newState });
+              showToast(newState ? 'Large Text enabled' : 'Large Text disabled');
+            }}
               style={{ width: '44px', height: '24px', borderRadius: '12px', background: accessibility.largeText ? 'var(--primary)' : 'var(--border-color)', position: 'relative', cursor: 'pointer', transition: 'background 0.2s' }}>
               <div style={{ position: 'absolute', top: '2px', left: accessibility.largeText ? '22px' : '2px', width: '20px', height: '20px', borderRadius: '50%', background: 'white', transition: 'left 0.2s' }} />
             </div>

@@ -21,14 +21,18 @@
   --bg-color: #000000;
   --white: #111111;
   --text-dark: #FFFFFF;
-  --text-gray: #CCCCCC;
+  --text-gray: #DDDDDD;
   --border-color: #FFFFFF;
   --card-shadow: 0 0 0 2px #FFFFFF;
+}
+.high-contrast * {
+  border-width: 2px !important;
 }
 
 /* Large Text Mode */
 .large-text {
   --font-base: 18px;
+  zoom: 1.15;
 }
 
 * {
@@ -269,7 +273,8 @@ body {
 
 .nav-item.active {
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
+  transform: scale(1.1);
 }
 
 /* Utilities */

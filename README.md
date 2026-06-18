@@ -73,6 +73,15 @@ Aplikasi ini dibangun menggunakan **React** dan **Vite**. Tidak memerlukan datab
 4. **Buka di Browser:**
    Akses `http://localhost:5173/` di browser Anda (sangat disarankan menggunakan mode responsif *mobile view* di browser dengan menekan F12 lalu mengaktifkan *Device Toolbar* karena UI-nya dibuat *mobile-first*).
 
+### 🔄 Cara Memperbarui (Update) Aplikasi
+
+Jika ada versi terbaru yang diunggah ke GitHub, Anda dapat memperbarui *clone* di komputer Anda agar sama dengan versi terbaru dengan cara menjalankan perintah ini di dalam folder `prototypeTAGA`:
+
+```bash
+git pull origin main
+```
+Setelah itu, jika ada penambahan *library* baru, jalankan kembali `npm install` sebelum memulai ulang `npm run dev`.
+
 ---
 
 ## 🔑 Kredensial Pengujian (Dummy Accounts)

@@ -30,7 +30,7 @@ import AdminTransactions from './pages/AdminTransactions';
 import AdminSettings from './pages/AdminSettings';
 
 function MainApp() {
-  const { user, accessibility } = useContext(AppContext);
+  const { user, accessibility, toastMessage } = useContext(AppContext);
 
   return (
     <div className={`${accessibility.highContrast ? 'high-contrast' : ''} ${accessibility.largeText ? 'large-text' : ''}`} style={{ height: '100%', width: '100%', backgroundColor: 'var(--bg-color)', color: 'var(--text-dark)' }}>

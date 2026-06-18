@@ -100,6 +100,7 @@ const dict = {
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+
   const [destinations, setDestinations] = useState(initialDestinations);
   const [bookings, setBookings] = useState([
     { id: 'TKT-1001', destination: initialDestinations[0], visitors: 2, date: new Date().toISOString().split('T')[0], totalPrice: 100000, paymentMethod: 'Virtual Account', status: 'Completed', userName: 'Yoel Gabriel' },
@@ -142,7 +143,15 @@ export const AppProvider = ({ children }) => {
   };
 
   const toggleFavorite = (id) => {
-    setFavorites(prev => prev.includes(id) ? prev.filter(fid => fid !== id) : [...prev, id]);
+    setFavorites(prev => {
+      const isFav = prev.includes(id);
+      if (isFav) {
+        showToast(t('removedFromFavorites') || 'Removed from favorites');
+        return prev.filter(fid => fid !== id);
+      }
+      showToast(t('addedToFavorites') || 'Added to favorites');
+      return [...prev, id];
+    });
   };
 
   const [activities, setActivities] = useState([
@@ -237,7 +246,7 @@ export const AppProvider = ({ children }) => {
       lang, setLang, t,
       accessibility, setAccessibility,
       favorites, toggleFavorite,
-      showToast,
+      toastMessage, showToast,
     }}>
       <div className={`${accessibility.highContrast ? 'high-contrast' : ''} ${accessibility.largeText ? 'large-text' : ''}`} style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
         {children}
