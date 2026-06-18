@@ -43,7 +43,7 @@ const initialDestinations = [
   },
   {
     id: 6, name: 'Kuta Beach', location: 'Badung, Bali', category: 'Beach', price: 0, rating: 4.6, reviews: 3200, distance: '5 km',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Kuta_beach_2.jpg/800px-Kuta_beach_2.jpg',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80',
     description: 'Kuta is a tourist mecca known for its party-centric atmosphere and surfing. Its long, sandy beach is lined with restaurants, bars, and hotels.',
     audioDuration: '25 min', highlights: ['Surfing', 'Sunset View', 'Nightlife', 'Shopping'],
   },
